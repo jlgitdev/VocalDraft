@@ -10,13 +10,13 @@ export CLANG_MODULE_CACHE_PATH="$ROOT_DIR/.build/clang-module-cache"
 swift build --disable-sandbox -c release
 BIN_DIR="$(swift build --disable-sandbox -c release --show-bin-path)"
 
-APP_DIR="$ROOT_DIR/build/TranscriptionPill.app"
+APP_DIR="$ROOT_DIR/build/VocalDraft.app"
 rm -rf "$APP_DIR"
 mkdir -p "$APP_DIR/Contents/MacOS"
 
-cp "$BIN_DIR/TranscriptionPill" "$APP_DIR/Contents/MacOS/TranscriptionPill"
+cp "$BIN_DIR/VocalDraft" "$APP_DIR/Contents/MacOS/VocalDraft"
 cp "$ROOT_DIR/Resources/Info.plist" "$APP_DIR/Contents/Info.plist"
-chmod +x "$APP_DIR/Contents/MacOS/TranscriptionPill"
+chmod +x "$APP_DIR/Contents/MacOS/VocalDraft"
 
 if command -v codesign >/dev/null 2>&1; then
   codesign --force --deep --sign - "$APP_DIR" >/dev/null

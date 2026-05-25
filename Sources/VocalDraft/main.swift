@@ -28,7 +28,7 @@ enum VoiceAction: Equatable {
 }
 
 @main
-enum TranscriptionPillMain {
+enum VocalDraftMain {
     private static var delegate: AppDelegate?
 
     static func main() {
@@ -57,7 +57,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApp.setActivationPolicy(.accessory)
-        ProcessInfo.processInfo.disableAutomaticTermination("TranscriptionPill keeps a floating overlay visible.")
+        ProcessInfo.processInfo.disableAutomaticTermination("VocalDraft keeps a floating overlay visible.")
 
         overlayController = OverlayWindowController(model: model)
         overlayController?.show()
@@ -321,7 +321,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             model.status = .idle
             return true
         } catch {
-            model.status = .error("Grant Accessibility and Input Monitoring permissions in System Settings for TranscriptionPill.")
+            model.status = .error("Grant Accessibility and Input Monitoring permissions in System Settings for VocalDraft.")
             scheduleHotkeyPermissionRetry()
             return false
         }
@@ -369,7 +369,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func showKeyIssue(_ message: String) {
-        NSLog("TranscriptionPill API key issue: %@", message)
+        NSLog("VocalDraft API key issue: %@", message)
 
         if isRecording {
             isRecording = false
@@ -389,7 +389,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func showError(_ message: String) {
-        NSLog("TranscriptionPill error: %@", message)
+        NSLog("VocalDraft error: %@", message)
 
         if isRecording {
             isRecording = false
@@ -914,7 +914,7 @@ final class AudioRecorder {
     var onLevel: ((Float) -> Void)?
 
     private let engine = AVAudioEngine()
-    private let audioQueue = DispatchQueue(label: "TranscriptionPill.audio")
+    private let audioQueue = DispatchQueue(label: "VocalDraft.audio")
     private var isRunning = false
 
     func start() throws {
@@ -1044,7 +1044,7 @@ final class AudioRecorder {
         }
 
         guard status != .error, conversionError == nil else {
-            NSLog("TranscriptionPill audio conversion failed: %@", conversionError?.localizedDescription ?? "unknown error")
+            NSLog("VocalDraft audio conversion failed: %@", conversionError?.localizedDescription ?? "unknown error")
             return Data()
         }
 
@@ -1597,7 +1597,7 @@ final class RealtimeTranscriber {
     var onError: ((String) -> Void)?
 
     private let apiKey: String
-    private let queue = DispatchQueue(label: "TranscriptionPill.realtime")
+    private let queue = DispatchQueue(label: "VocalDraft.realtime")
     private var socket: URLSessionWebSocketTask?
     private var pendingClientEvents: [[String: Any]] = []
     private var partialByItemID: [String: String] = [:]
@@ -1817,7 +1817,7 @@ final class RealtimeTextEditor {
 
     private let apiKey: String
     private let originalText: String
-    private let queue = DispatchQueue(label: "TranscriptionPill.realtime-edit")
+    private let queue = DispatchQueue(label: "VocalDraft.realtime-edit")
     private var socket: URLSessionWebSocketTask?
     private var pendingClientEvents: [[String: Any]] = []
     private var parser: RealtimeEditEventParser
@@ -2130,7 +2130,7 @@ enum APIKeyStore {
 
     private static var applicationSupportEnvFileURL: URL {
         FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("TranscriptionPill", isDirectory: true)
+            .appendingPathComponent("VocalDraft", isDirectory: true)
             .appendingPathComponent(fileName)
     }
 

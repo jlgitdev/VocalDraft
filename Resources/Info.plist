@@ -5,13 +5,13 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>en</string>
     <key>CFBundleExecutable</key>
-    <string>TranscriptionPill</string>
+    <string>VocalDraft</string>
     <key>CFBundleIdentifier</key>
-    <string>local.transcription-pill</string>
+    <string>local.vocaldraft</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>
-    <string>TranscriptionPill</string>
+    <string>VocalDraft</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
@@ -23,11 +23,11 @@
     <key>LSUIElement</key>
     <true/>
     <key>NSAppleEventsUsageDescription</key>
-    <string>TranscriptionPill uses paste automation to insert transcriptions and apply voice edits to the active text field.</string>
+    <string>VocalDraft uses paste automation to insert transcriptions and apply voice edits to the active text field.</string>
     <key>NSInputMonitoringUsageDescription</key>
-    <string>TranscriptionPill uses keyboard monitoring only to detect the Command+3 transcription hotkey and Command+4 voice edit hotkey.</string>
+    <string>VocalDraft uses keyboard monitoring only to detect the Command+3 transcription hotkey and Command+4 voice edit hotkey.</string>
     <key>NSMicrophoneUsageDescription</key>
-    <string>TranscriptionPill records your microphone only while Command+3 is held for transcription or Command+4 is held for voice editing.</string>
+    <string>VocalDraft records your microphone only while Command+3 is held for transcription or Command+4 is held for voice editing.</string>
     <key>NSPrincipalClass</key>
     <string>NSApplication</string>
 </dict>

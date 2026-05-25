@@ -1,5 +1,5 @@
 import XCTest
-@testable import TranscriptionPill
+@testable import VocalDraft
 
 final class RealtimeTranscriptionProtocolTests: XCTestCase {
     func testWebSocketURLUsesTranscriptionIntent() {

@@ -3,16 +3,16 @@
 import PackageDescription
 
 let package = Package(
-    name: "TranscriptionPill",
+    name: "VocalDraft",
     platforms: [
         .macOS(.v13)
     ],
     products: [
-        .executable(name: "TranscriptionPill", targets: ["TranscriptionPill"])
+        .executable(name: "VocalDraft", targets: ["VocalDraft"])
     ],
     targets: [
         .executableTarget(
-            name: "TranscriptionPill",
+            name: "VocalDraft",
             linkerSettings: [
                 .linkedFramework("AppKit"),
                 .linkedFramework("AVFoundation"),
@@ -21,8 +21,8 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "TranscriptionPillTests",
-            dependencies: ["TranscriptionPill"]
+            name: "VocalDraftTests",
+            dependencies: ["VocalDraft"]
         )
     ]
 )

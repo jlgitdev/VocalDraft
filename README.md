@@ -1,4 +1,4 @@
-# TranscriptionPill
+# VocalDraft
 
 A small macOS overlay for hold-to-transcribe dictation and voice-driven text edits.
 
@@ -30,7 +30,7 @@ Build the app bundle:
 Run it:
 
 ```bash
-open build/TranscriptionPill.app
+open build/VocalDraft.app
 ```
 
 On first launch, macOS will ask for permissions. Grant:

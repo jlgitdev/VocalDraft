@@ -1,7 +1,7 @@
 import ApplicationServices
 import CoreGraphics
 import XCTest
-@testable import TranscriptionPill
+@testable import VocalDraft
 
 final class RealtimeEditProtocolTests: XCTestCase {
     func testWebSocketURLUsesRealtimeEditModel() {
