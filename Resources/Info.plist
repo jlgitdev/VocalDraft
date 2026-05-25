@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleExecutable</key>
+    <string>TranscriptionPill</string>
+    <key>CFBundleIdentifier</key>
+    <string>local.transcription-pill</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>TranscriptionPill</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>0.1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>13.0</string>
+    <key>LSUIElement</key>
+    <true/>
+    <key>NSAppleEventsUsageDescription</key>
+    <string>TranscriptionPill uses paste automation to insert transcriptions and apply voice edits to the active text field.</string>
+    <key>NSInputMonitoringUsageDescription</key>
+    <string>TranscriptionPill uses keyboard monitoring only to detect the Command+3 transcription hotkey and Command+4 voice edit hotkey.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>TranscriptionPill records your microphone only while Command+3 is held for transcription or Command+4 is held for voice editing.</string>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+</dict>
+</plist>
